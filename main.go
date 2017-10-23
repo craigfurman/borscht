@@ -39,8 +39,7 @@ func run(ctx *cli.Context) error {
 	}
 	releasePath := ctx.Args().Get(0)
 
-	b := &borscht.Borscht{}
-	jobDiffs, err := b.Diff(releasePath, fromVersion, toVersion)
+	jobDiffs, err := borscht.Diff(releasePath, fromVersion, toVersion)
 	if err != nil {
 		return err
 	}
